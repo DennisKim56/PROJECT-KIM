@@ -1,0 +1,50 @@
+.home-background {
+  background: black url(/sky.jpeg);
+  perspective: 1000px;
+  width: 100vw;
+  height: calc(100vh - 77px);
+  background-position: center;
+  position: relative;
+  top: -1px;
+}
+
+.title-container {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 10%;
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  display: inline-block;
+  padding: 2rem;
+  background: black;
+  border-radius: 5px;
+  cursor: default;
+}
+
+.earth {
+  top: 40%;
+  background: #888 url(/earth.jpg) 0 0 repeat;
+  position: relative;
+  height: 300px;
+  width: 300px;
+  margin: 0.05em auto;
+  background-size: 630px;
+  border-radius: 50%;
+  animation: rotate 15s linear infinite;
+  transition: transform 200ms linear;
+  transform-style: preserve-3d;
+  box-shadow: inset 20px 0 80px 6px rgb(0, 0, 0);
+  transform: rotate(-7deg);
+}
+@keyframes rotate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 630px 0;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="score-view-container">
+  <div>
+    <h1>High Scores</h1>
+    <table *ngIf="scoreData.length > 0; else elseBlock">
+      <tr>
+        <th></th>
+        <th>Username</th>
+        <th>Date</th>
+        <th>Score</th>
+      </tr>
+      <tr *ngFor="let score of scoreData; let i = index" class="table-body">
+        <td>{{ i + 1 }}.</td>
+        <td>{{ score.username }}</td>
+        <td>{{ score.date | date : "medium" }}</td>
+        <td>{{ score.totalScore }}</td>
+      </tr>
+    </table>
+    <ng-template #elseBlock
+      ><div class="no-data-msg">No scores to display.</div></ng-template
+    >
+  </div>
+</div>

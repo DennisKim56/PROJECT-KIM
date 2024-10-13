@@ -1,0 +1,58 @@
+<div class="play-container">
+  <div class="map-container">
+    <div id="map"></div>
+  </div>
+  <div class="city-container">
+    <div class="city-container-title">Cities</div>
+    <div
+      *ngFor="let city of cityData; let i = index"
+      class="city-tile"
+      [ngClass]="{ active: i == activeIndex, inactive: gameComplete }"
+      (click)="setActive(i)"
+    >
+      <div class="city-tile-label">{{ city.city }}</div>
+      <div *ngIf="gameComplete; else elseBlock" class="city-tile-score">
+        {{ city.score }} points
+      </div>
+      <ng-template #elseBlock>
+        <div class="city-tile-guess">
+          <div *ngIf="city.guess.lat && city.guess.lng" class="city-tile-grid">
+            <div>lat: {{ city.guess.lat }}&#176;</div>
+            <div>long: {{ city.guess.lng }}&#176;</div>
+          </div>
+          <fa-icon
+            *ngIf="city.guess.lat && city.guess.lng"
+            [icon]="faCircleCheck"
+            class="icon-style"
+          ></fa-icon>
+        </div>
+      </ng-template>
+    </div>
+    <div *ngIf="gameComplete; else elseBlock" class="city-tile-score">
+      <div class="user-container">
+        <span class="user-label"
+          >Total Score: {{ result?.totalScore ?? "N/A" }}</span
+        >
+      </div>
+      <a href="/play"> <div class="submit-btn ready">Play Again</div></a>
+    </div>
+    <ng-template #elseBlock>
+      <div class="user-container">
+        <span class="user-label">User:</span>
+        <input [(ngModel)]="user" class="user-input" />
+        <fa-icon
+          *ngIf="user"
+          [icon]="faCircleCheck"
+          class="user-icon icon-style"
+        ></fa-icon>
+      </div>
+      <button
+        (click)="handleSubmit()"
+        class="submit-btn"
+        [ngClass]="{ ready: readyForSubmit() }"
+      >
+        SUBMIT
+      </button>
+    </ng-template>
+  </div>
+</div>

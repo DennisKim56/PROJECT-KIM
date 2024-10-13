@@ -1,0 +1,128 @@
+.play-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin: 1rem;
+  justify-content: center;
+}
+
+.map-container {
+  height: 800px;
+  width: 80%;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.city-container {
+  margin-top: 1rem;
+  min-width: 350px;
+  width: calc(20% - 1rem);
+  padding-left: 1rem;
+}
+
+.city-container-title {
+  text-align: center;
+  background-color: #00ca00;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.city-tile {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  background-color: #6494ed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.city-tile:hover {
+  background-color: #3c6cc5;
+}
+
+.city-tile.active {
+  font-size: 1.3rem;
+  background-color: #97c7ff;
+  border: 3px solid darkgreen;
+}
+
+.city-container > .city-tile.inactive {
+  background-color: lightgray;
+}
+
+.city-tile-label {
+  min-width: 90px;
+}
+
+.city-tile-guess {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.city-tile-grid {
+  min-width: 130px;
+  margin-right: 1rem;
+}
+
+.submit-btn {
+  margin: auto;
+  width: 30%;
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 1rem 0.5rem;
+  background-color: grey;
+  min-width: 8rem;
+  cursor: not-allowed;
+  font-weight: bold;
+  display: block;
+}
+
+.icon-style {
+  color: darkgreen;
+  float: right;
+}
+
+.user-container {
+  margin: 1rem auto;
+  position: relative;
+}
+
+.user-label {
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+
+.user-input {
+  width: calc(70% - 2rem);
+  font-size: 1.5rem;
+  padding-right: 2rem;
+}
+
+.user-icon {
+  position: absolute;
+  right: 20px;
+  top: 4px;
+  font-size: 1.5rem;
+}
+
+.ready {
+  color: darkgreen;
+  cursor: pointer;
+  background-color: #6494ed;
+}
+
+a {
+  text-decoration: none;
+}

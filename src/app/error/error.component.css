@@ -1,0 +1,27 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-img {
+  background-image: url(/error.webp);
+  background-size: cover;
+  background-position: center;
+  width: 50vw;
+  height: 60vh;
+  margin: auto;
+  border-radius: 5px;
+  outline: 3px solid black;
+  margin-top: 5rem;
+}
+
+a {
+  margin-top: 2rem;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.icon-style {
+  margin-right: 0.5rem;
+}
